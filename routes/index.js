@@ -47,7 +47,6 @@ function sendSQSMessage(result) {
 }
 
 function resetPipeline() {
-  var oauthToken = "3199eb70a36d9cdecbab3fd0413dd7a0cd4d56be";
   var gitHubUser = "derickwalburger";
   var gitHubRepo = "tech-showcase-1";
   var fileToUpdate = "Showcase1/file.txt";  // Path to file in repo without leading slash
