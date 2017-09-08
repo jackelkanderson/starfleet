@@ -28,7 +28,7 @@ router.get('/reset', function(req, res) {
 function sendSQSMessage(result) {
   var params = {
       MessageBody: result,
-      QueueUrl: 'https://sqs.us-west-2.amazonaws.com/386908507125/Showcase3.fifo', //TODO: dynamic URL
+      QueueUrl: 'https://sqs.us-west-2.amazonaws.com/386908507125/Showcase1.fifo', //TODO: dynamic URL
       DelaySeconds: 0,
       MessageAttributes: {
           'Result': {
@@ -47,9 +47,10 @@ function sendSQSMessage(result) {
 }
 
 function resetPipeline() {
+  var oauthToken = "c281ae0dea71f37d53d84483a495534f63aaadc1";
   var gitHubUser = "derickwalburger";
   var gitHubRepo = "tech-showcase-1";
-  var fileToUpdate = "Showcase3/file.txt";  // Path to file in repo without leading slash
+  var fileToUpdate = "Showcase1/file.txt";  // Path to file in repo without leading slash
   
   var commitMessage = "yolo reset";
   var fileContent = base64.encode((Math.random()*1000000).toString());   // Base 64 encoded content
